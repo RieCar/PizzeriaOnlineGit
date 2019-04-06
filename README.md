@@ -1,0 +1,2 @@
+# PizzeriaOnlineGit
+AspNetCoreApp
