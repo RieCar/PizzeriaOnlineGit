@@ -1,0 +1,70 @@
+﻿@model PizzeriaOnline.Models.Kund
+@{
+    Layout = null;
+}
+
+<p> @ViewBag.Message </p>
+
+<form class="form-horizontal" asp-controller="Account" asp-action="SaveChanges" method="post">
+    <h3 class="text-uppercase"> Min Sida </h3>
+    <div class="form-group">
+        <input type="hidden" asp-for="@Model.KundId" value="@Model.KundId" />
+        <label class="col-sm-3" asp-for="AnvandarNamn"></label>
+        <div class="col-sm-9">
+            <input class="form-control" type="text" id="AnvandarNamn" asp-for="@Model.AnvandarNamn" value="@Model.AnvandarNamn" />
+            <span asp-validation-for="@Model.AnvandarNamn"> </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3" asp-for="Email"></label>
+        <div class="col-sm-9">
+            <input class="form-control" type="text" id="Email" asp-for="@Model.Email" value="@Model.Email" />
+            <span asp-validation-for="@Model.Email"> </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3" asp-for="Namn"></label>
+        <div class="col-sm-9">
+            <input class="form-control" type="text" id="Namn"asp-for="@Model.Namn" value="@Model.Namn" />
+            <span asp-validation-for="@Model.Namn"> </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3" asp-for="Gatuadress"></label>
+        <div class="col-sm-9">
+            <input class="form-control" type="text" id="Gatuadress" asp-for="@Model.Gatuadress" value="@Model.Gatuadress" />
+            <span asp-validation-for="@Model.Gatuadress"> </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3" asp-for="Postnr"></label>
+        <div class="col-sm-3">
+            <input class="form-control" type="text" id="Postnr" asp-for="@Model.Postnr" value="@Model.Postnr" />
+            <span asp-validation-for="@Model.Postnr"> </span>
+        </div>
+        <label class="col-sm-2" asp-for="Postort"></label>
+        <div class="col-sm-4">
+            <input class="form-control" type="text" id="Postort" asp-for="@Model.Postort" value="@Model.Postort" />
+            <span asp-validation-for="@Model.Postort"> </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3" asp-for="Telefon"></label>
+        <div class="col-sm-9">
+            <input class="form-control" type="text" id="Telefon"asp-for="@Model.Telefon" value="@Model.Telefon" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3" asp-for="Losenord"></label>
+        <div class="col-sm-9">
+            <input class="form-control" type="text" id="Losenord" asp-for="@Model.Losenord" value="@Model.Losenord" />
+            <span asp-validation-for="@Model.Losenord"> </span>
+        </div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary"> Spara ändringar </button>
+    <br />
+</form>
+
+
+

@@ -1,0 +1,31 @@
+﻿@model List<PizzeriaOnline.Models.Matratt>
+
+
+<table class="table table-responsive table-condensed">
+    <thead>
+        <tr>
+            <th>Rätt</th>
+            <th>Beskrivning</th>
+            <th>Ingredienser</th>
+            <th>Pris</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ratt in Model)
+        {
+        <tr>
+            <td class="small text-uppercase"> @ratt.MatrattNamn</td>
+            <td class="small"> @ratt.Beskrivning</td>
+            <td class="small">
+                @foreach (var matr in ratt.MatrattProdukt)
+                {
+                    <p class="small"> @matr.Produkt.ProduktNamn </p>
+                }
+            </td>
+            <td class="small"> @ratt.Pris kr</td>
+        </tr>
+        <hr />
+        }
+    </tbody>
+</table>
+

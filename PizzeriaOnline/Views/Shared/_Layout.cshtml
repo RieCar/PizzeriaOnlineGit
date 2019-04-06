@@ -1,0 +1,79 @@
+﻿<DOCTYPE hmtl!>
+
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap  -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Ajax library -->
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+        <script src="~/Scripts/additional-methods.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+        <link href="~/css/MyStyleSheet.css" rel="stylesheet" />
+
+
+
+    </head>
+
+    <body>
+        <header>
+
+
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a asp-controller="Home" asp-action="Index">Start</a></li>
+                        <li><a asp-controller="Home" asp-action="About">Om Pizzeria Online</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a asp-controller="Account" asp-action="AccountSide"><span class="glyphicon glyphicon-home"></span>  Min sida</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" asp-controller="Account" asp-action="LogIn"><span class="glyphicon glyphicon-user "></span> Logga in/ut <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li> <a asp-controller="Account" asp-action="LogIn"> Logga in </a></li>
+                                <li><a asp-controller="Account" asp-action="LogOut">Logga ut </a></li>
+                            </ul>
+                        </li>
+                        <li><a asp-controller="Order" asp-action="DoneAndCheckOut"><span class="glyphicon glyphicon-shopping-cart"></span>  Varukorg</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <br /> <br />
+
+            <h1> Pizzeria Online</h1>
+
+        </header>
+
+
+
+        <main>
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.ajax.unobtrusive/3.2.4/jquery.unobtrusive-ajax.min.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</DOCTYPE>

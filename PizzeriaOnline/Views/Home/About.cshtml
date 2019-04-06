@@ -1,0 +1,45 @@
+﻿@model List<PizzeriaOnline.Models.MatrattTyp>
+
+<div class="row">
+    <div class="mainSide col-sm-7">
+        <h2> Pizzeria Online</h2>
+
+        <p>
+            Pizzaria Online startade 2018 ur behovet för människor med behovet av att kunna äta när de vill
+            Det är kanske inte ett behov som alla känner igen, men det var tillräckligt många som stod utanför vår
+            lokala pizzeria strax efter stängning för att kunna öppna upp för online-beställningar. Dygnet runt!
+        </p>
+        <p>
+            Vi finns här för dig alla tider på dygnet då hungern smyger sig på
+            och du bara måste ha en bit mat, genast!
+            Du får maten hemlevererad till din dörr av våra snabba utkörare och vi har en "varm mat garanti".
+        </p>
+    </div>
+
+    <div class="sideBar col-sm-5">
+
+        <h3>Vår meny!</h3>
+        <ul>
+            @foreach (var type in Model)
+            {
+                <li>
+                    <a asp-controller="Home"
+                       asp-action="ViewMeny"
+                       asp-route-id="@type.MatrattTyp1"
+                       data-ajax="true"
+                       data-ajax-method="GET"
+                       data-ajax-mode="replace"
+                       data-ajax-update="#partialStart">
+                        @type.Beskrivning
+                    </a>
+                </li>
+            }
+
+        </ul>
+
+        <div id="partialStart">
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,38 @@
+﻿@model PizzeriaOnline.Models.Kund
+<div id="wrapper">
+    <div class="centrerad">
+
+
+        <form asp-controller="Account" asp-action="RegisterAccount" method="post">
+            <h3> SKAPA ETT KONTO FÖR PIZZERIA ONLINE </h3>
+            <p class="smallText"> Vänligen fyll i informationen nedan för att skapa ett konto </p>
+            <input type="text" placeholder="Förnamn Efternamn*" asp-for="Namn" />
+
+            <input type="text" asp-for="Gatuadress" placeholder="Gatuadress*" /> <br />
+            <span asp-validation-for="Namn"></span>
+            <span asp-validation-for="Gatuadress"></span>
+            <br />
+            <input type="text" asp-for="Postnr" placeholder="Postnr*" />
+
+            <input type="text" asp-for="Postort" placeholder="Postort*" />  <br />
+            <span asp-validation-for="Postnr"></span>
+            <span asp-validation-for="Postort"></span>
+            <br />
+            <input type="text" asp-for="Email" placeholder="Email" />
+            <input type="text" placeholder="Telefon" asp-for="Telefon" /> <br />
+            <span asp-validation-for="Email"></span>
+            <span asp-validation-for="Telefon"></span>
+            <br />
+            <input type="text" placeholder="Användarnamn*" asp-for="AnvandarNamn" />
+            <input type="password" placeholder="Lösenord*" asp-for="Losenord" /><br />
+            <span asp-validation-for="AnvandarNamn"></span>
+            <span asp-validation-for="Losenord"></span>
+            <br />
+            <p class="smallText"> * Var god fyll i alla obligatoriska uppgifter</p>
+            <button type="submit"> Spara </button>
+            <p class="smallText">@ViewBag.Message </p>
+        </form>
+       
+    </div>
+
+</div>

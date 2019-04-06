@@ -1,0 +1,57 @@
+﻿@model PizzeriaOnline.ViewModels.OrderCheckOut
+<div class="row">
+    <div class="sideBar col-sm-5">
+        <table>
+            <tr>
+                <td>@Model.ShoppingUser.Namn </td>
+            </tr>
+            <tr>
+                <td> @Model.ShoppingUser.Gatuadress </td>
+            </tr>
+            <tr>
+                <td> @Model.ShoppingUser.Postnr </td>
+                <td> @Model.ShoppingUser.Postort</td>
+            </tr>
+            <tr>
+                <td>  @Model.ShoppingUser.Email </td>
+                <td> @Model.ShoppingUser.Telefon</td>
+            </tr>
+        </table>
+        <a asp-controller="Account" asp-action="AccountSide">Uppdatera uppgifter</a>
+    </div>
+
+    <div class="mainSide col-sm-7">
+        <h3> Beställning </h3>
+        <hr />
+        @ViewBag.Message
+
+        <ul class="left">
+            <li> Beställda rätter </li>
+            @foreach (var matratt in Model.FoodOrder)
+            {
+                <br />
+                <li> @matratt.MatrattNamn</li>
+                <br />
+                <li> @matratt.Pris</li>
+                <br />
+            }
+        </ul>
+        <ul id="quant" class="right">
+            <li> Antal </li>
+            @foreach (var koppling in Model.ListOfMatrattToOrder)
+            {
+                <br />
+                <li>@koppling.Antal</li>
+                <br />
+                <li><a class="btn btn-link" role="button" asp-controller="Order" asp-action="RemoveFromOrder" asp-route-id="@koppling.MatrattId">Ta bort rätt</a></li>
+                <br />
+            }
+        </ul>
+
+        <hr />
+        <h4 class="text-uppercase">  Totalsumma för din beställning: @Model.TodoBestallning.Totalbelopp kronor</h4>
+        <a class="btn btn-primary" role="button" asp-controller="Order" asp-action="ViewFood">Lägg till rätt </a>
+        <a class="btn btn-primary" role="button" asp-controller="Order" asp-action="PayCheckOut">Skicka beställning </a>
+
+    </div>
+</div>

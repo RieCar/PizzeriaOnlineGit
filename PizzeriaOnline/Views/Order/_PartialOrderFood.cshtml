@@ -1,0 +1,39 @@
+﻿
+@model List<PizzeriaOnline.Models.Matratt>
+
+
+<table class="table table-responsive table-condensed">
+    <thead>
+        <tr>
+            <th>Rätt</th>
+            <th> Beskrivning</th>
+            <th> Ingredienser</th>
+            <th> Pris</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var ratt in Model)
+        {
+            <tr>
+                <td class="small text-uppercase">@ratt.MatrattNamn </td>
+                <td class="small"> @ratt.Beskrivning </td>
+
+                <td class="small">
+                    @foreach (var s in ratt.MatrattProdukt)
+                    {
+                        <p class="small">@s.Produkt.ProduktNamn </p>
+
+                    }
+                </td>
+                <td class="small"> @ratt.Pris kr</td>
+                <td class="small"> <a class="btn btn-primary" role="button" asp-controller="Order" asp-action="AddToOrder" asp-route-id="@ratt.MatrattId"> KÖP>></a></td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+

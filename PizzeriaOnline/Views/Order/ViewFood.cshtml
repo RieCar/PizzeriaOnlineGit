@@ -1,0 +1,40 @@
+﻿@model PizzeriaOnline.ViewModels.ViewModelOrder
+
+<div class="row">
+    <div class="sideBar col-sm-5">
+        <h2> Välkommen  - här kan du välja de maträtter för beställning</h2>
+
+        <p>
+            Välj och vraka. 
+        </p>
+
+    </div>
+
+    <div class="mainSide col-sm-7">
+        <h3>Välj rätt/-er!</h3> <a class="text-left btn btn-link" role="button" asp-controller="Order" asp-action="DoneAndCheckOut"> Gå till kassan </a>
+        <br />
+        <ul>
+            @foreach (var type in Model.ListOfTyper)
+            {
+                <li>
+                    <a asp-controller="Order"
+                       asp-action="ViewFoodToOrder"
+                       asp-route-id="@type.MatrattTyp1"
+                       data-ajax="true"
+                       data-ajax-method="POST"
+                       data-ajax-mode="replace"
+                       data-ajax-update="#partialStart">
+                        @type.Beskrivning
+                    </a>
+                </li>
+            }
+
+        </ul>
+        <br />
+        <div id="partialStart" class="col-sm-7">
+
+        </div>
+        <br />
+
+    </div>
+</div>

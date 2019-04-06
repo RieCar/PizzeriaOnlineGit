@@ -1,0 +1,37 @@
+﻿@model PizzeriaOnline.ViewModels.OrderCheckOut
+<div class="mainSide">
+    <div class="row">
+
+        <table class="table-condensed"@*class="col-sm-12"*@>
+            <thead>
+                <tr>
+                    <th>Tack för din beställning!</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-sm-7"> Beräknad leveranstid 30 minuter </td>
+                </tr>
+                <tr>
+                    <td class="col-sm-7"> Datum: @Model.TodoBestallning.BestallningDatum</td>
+                </tr>
+                <tr>
+                    <td class="col-sm-7">Totalbelopp: @Model.TodoBestallning.Totalbelopp</td>
+                </tr>
+                <tr>
+                    <td class="col-sm-7"> Leveransadress: @Model.ShoppingUser.Gatuadress</td>
+                </tr>
+                @foreach (var matratt in Model.ListOfMatrattToOrder)
+                {               
+                    <tr>
+                        <td class="col-sm-3">@matratt.Matratt.MatrattNamn </td>
+
+                        <td class="col-sm-9">Antal: @matratt.Antal </td>
+
+                    </tr>
+            
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
